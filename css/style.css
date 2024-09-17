@@ -1,0 +1,19 @@
+/* Estilos personalizados */
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: linear-gradient(to right, #00b652, #00b652(113, 91%, 34%));
+}
+
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+.navbar-custom {
+  background-color: #28a745;
+}
