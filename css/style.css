@@ -1,30 +1,29 @@
-body, html{
-    background-color: aqua;
-}
-/* Estilos del banner */
-.banner {
-    background-color: #06cc69;
-    padding: 100px 20px;
-    text-align: center;
+/* Estilos personalizados */
+body {
+  font-family: Arial, sans-serif;
 }
 
-.banner h1 {
-    margin: 0;
-    font-size: 10em;
-    color: #ffffff;
+header {
+  background: linear-gradient(to right, #00b652, #00b652(113, 91%, 34%));
 }
 
-.banner p {
-    font-size: 1.2em;
-    color: #ffffff;
+.card {
+  transition: transform 0.3s ease-in-out;
 }
 
-img {
-    .logo
-    width: 100px;
-    height: 100px;
+.card:hover {
+  transform: scale(1.05);
 }
-#lg{
-    width: 70px;
-    height: 50px;
+.navbar-custom {
+  background-color: #28a745;
 }
+
+font-family: 'Bebas Neue', cursive;
+font-size: 20px;
+width: 960px;    
+height: 50px;
+background-color:rgb(52, 90, 88);
+color: white;
+text-align: center;
+padding-top: 10px;
+float: left; 
