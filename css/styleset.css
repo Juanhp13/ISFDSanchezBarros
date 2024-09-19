@@ -24,6 +24,10 @@ img {
     width: 100px;
     height: 100px;
 }
+#lg{
+    width: 70px;
+    height: 50px;
+}
 
 .accordion-container {
     display: flex;
@@ -47,7 +51,4 @@ img {
 #pedagogia{
     width: 25%;
     height: 25%;
-}
-.container{
- color: blue;
 }
