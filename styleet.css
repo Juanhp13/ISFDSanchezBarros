@@ -1,6 +1,6 @@
-/* Estilos personalizados */
-body {
-  background-color: rgb(52, 90, 88);
+
+html,body {
+  background-color: aqua;
   font-family: Arial, sans-serif;
 }
 
@@ -32,17 +32,20 @@ header {
  #A1{
   font-family: 'Bebas Neue', cursive;
   font-size: 20px;
-  background-color:rgb(52, 90, 88);
-  color: white;
+  background-color:rgba(2, 155, 155, 0.664);
+  color: rgb(255, 255, 255);
   text-align: center;
  
   }
 
 .accordion .heading {
     text-align: center;
-    background-color: rgb(52, 90, 88);
+    background-color: rgba(2, 155, 155, 0.664);
 }
 #head{
-  background-color: rgb(52, 90, 88);
-  border:rgb(52, 90, 88);
-}
+  background-color: rgba(2, 155, 155, 0.664);
+  border:rgba(2, 155, 155, 0.664);}
+  #lg{
+    width:20%;
+    height: 20%;
+  }
