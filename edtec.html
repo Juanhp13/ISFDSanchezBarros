@@ -264,7 +264,93 @@
           <div class="frame">
             <div class="heading">Unidad 5</div>
             <div class="content">
-              <div class="p-2">Cur luba manducare? Pol, a bene ionicis tormento...</div>
+              <div class="p-2">
+                
+                <h1>Subir Enlace</h1>
+
+                <h2>Enlaces Guardados</h2>
+                <ul id="linkList"></ul>
+                
+                <form id="linkForm">
+                    <label for="title">Título:</label>
+                    <input type="text" id="title" name="title" required>
+                    <br>
+                    <label for="link">Enlace:</label>
+                    <input type="url" id="link" name="link" required>
+                    <br>
+                    <label for="code">Código:</label>
+                    <input type="text" id="code" name="code" required>
+                    <br>
+                    <button type="submit">Subir</button>
+                </form>
+                
+                <script>
+                    const validCodes = ["codigo1", "codigo2", "codigo3", "codigo4", "codigo5", "codigo6", "codigo7", "codigo8", "codigo9", "codigo10"];
+                    const form = document.getElementById('linkForm');
+                    const linkList = document.getElementById('linkList');
+                
+                    form.addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        const title = document.getElementById('title').value;
+                        const link = document.getElementById('link').value;
+                        const code = document.getElementById('code').value;
+                
+                        if (validCodes.includes(code)) {
+                            saveLink(title, link);
+                            displayLinks();
+                            form.reset();
+                        } else {
+                            alert('Código inválido. Por favor, ingrese un código válido.');
+                        }
+                    });
+                
+                    function saveLink(title, link) {
+                        let links = JSON.parse(localStorage.getItem('links')) || [];
+                        links.push({ title, link });
+                        localStorage.setItem('links', JSON.stringify(links));
+                    }
+                
+                    function displayLinks() {
+                        let links = JSON.parse(localStorage.getItem('links')) || [];
+                        linkList.innerHTML = '';
+                        links.forEach((item, index) => {
+                            let li = document.createElement('li');
+                            let a = document.createElement('a');
+                            a.href = item.link;
+                            a.textContent = item.title;
+                            a.target = "_blank";
+                            li.appendChild(a);
+                
+                            let deleteButton = document.createElement('button');
+                            deleteButton.textContent = 'X';
+                            deleteButton.style.marginLeft = '10px';
+                            deleteButton.addEventListener('click', function() {
+                                let code = prompt('Ingrese el código para eliminar el enlace:');
+                                if (validCodes.includes(code)) {
+                                    deleteLink(index);
+                                } else {
+                                    alert('Código inválido. No se puede eliminar el enlace.');
+                                }
+                            });
+                            li.appendChild(deleteButton);
+                
+                            linkList.appendChild(li);
+                        });
+                    }
+                
+                    function deleteLink(index) {
+                        let links = JSON.parse(localStorage.getItem('links')) || [];
+                        links.splice(index, 1);
+                        localStorage.setItem('links', JSON.stringify(links));
+                        displayLinks();
+                    }
+                
+                    // Mostrar los enlaces guardados al cargar la página
+                    displayLinks();
+                </script>
+                
+                
+              </div>
             </div>
           </div>
         </div>
